@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri | Etawagen</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f8fafc;
+    color: #111;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+}
+
+/* HERO */
+.hero-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.hero {
+    max-width: 1100px;
+    width: 100%;
+    background: white;
+    border-radius: 30px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.hero-text span {
+    font-size: 13px;
+    color: #888;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.hero-text p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.hero-img img {
+    width: 260px;
+    border-radius: 20px;
+}
+
+/* PRODUCTS */
+.products {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.products h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card a {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #111;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/* ABOUT (MERGED STYLE) */
+.about {
+    max-width: 1100px;
+    margin: 120px auto;
+    padding: 0 20px;
+}
+
+.about-box {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.about-img img {
+    width: 300px;
+    border-radius: 20px;
+}
+
+.about-text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* ABOUT CARDS */
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.about-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+}
+
+.about-icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.about-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.about-card p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* RESPONSIVE (SEMUA DIGABUNG) */
+@media (max-width: 768px) {
+    .hero,
+    .about-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-img img,
+    .about-img img {
+        width: 200px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BACKGROUND PREMIUM */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    color: #111;
+}
+
+/* NAV */
+nav a {
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #111;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO PREMIUM */
+.hero {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    transition: 0.4s;
+}
+
+.hero:hover {
+    transform: translateY(-5px);
+}
+
+/* TEXT EFFECT */
+.hero-text h1 {
+    background: linear-gradient(90deg, #111, #555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* BUTTON PREMIUM */
+.btn {
+    background: linear-gradient(135deg, #111, #333);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* CARD PRODUCT */
+.card {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.4);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* IMAGE EFFECT */
+.card img {
+    transition: 0.4s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* ABOUT BOX */
+.about-box {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+/* ABOUT CARDS */
+.about-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.about-card:hover {
+    transform: translateY(-6px) scale(1.03);
+}
+
+/* ICON GLOW */
+.about-icon {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.05);
+}
+
+/* SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
+}
+/* CONTACT FINAL */
+.contact {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* GRID */
+.social-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.social-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.social-item:hover {
+    transform: translateY(-6px) scale(1.03);
+}
+
+/* ICON */
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* BRAND HOVER */
+.social-item:nth-child(1):hover {
+    color: #25D366;
+}
+
+.social-item:nth-child(2):hover {
+    color: #E1306C;
+}
+
+.social-item:nth-child(3):hover {
+    color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .social-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .social-item:nth-child(3) {
+        grid-column: 1 / span 2;
+        justify-self: center;
+        width: 70%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Product</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrapper">
+    <div class="hero">
+        <div class="hero-text">
+            <span>#SehatAlami</span>
+            <h1>Etawagen</h1>
+            <p>Susu kambing premium untuk kesehatan harian & energi alami.</p>
+            <a href="#" class="btn">Order Sekarang</a>
+        </div>
+
+        <div class="hero-img">
+            <img src="sri.png">
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products">
+    <h2>Produk Kami</h2>
+
+    <div class="product-grid">
+        <div class="card">
+            <img src="prod1.jpeg">
+            <h3>Yukagen</h3>
+            <p>Colagen Drink</p>
+            <div class="price">Rp200.000</div>
+            <a href="wa.link/8z9ml3">Beli</a>
+        </div>
+
+        <div class="card">
+            <img src="prod2.jpeg">
+            <h3>Yukari</h3>
+            <p>Beauty Soap</p>
+            <div class="price">Rp75.000</div>
+            <a href="https://wa.link/sk8wwv">Beli</a>
+        </div>
+
+        <div class="card">
+            <img src="prod3.jpeg">
+            <h3>Etawagen</h3>
+            <p>Susu Kambing</p>
+            <div class="price">Rp200.000</div>
+            <a href="https://wa.link/75nace">Beli</a>
+        </div>
+
+        <div class="card">
+            <img src="prod4.jpeg">
+            <h3>Yukari</h3>
+            <p>Beauty Serum</p>
+            <div class="price">Rp300.000</div>
+            <a href="https://wa.link/pz4adr">Beli</a>
+        </div>
+
+        <div class="card">
+            <img src="prod5.jpeg">
+            <h3>Densisvera</h3>
+            <p>Ekstrak Lidah Buaya</p>
+            <div class="price">Rp200.000</div>
+            <a href="https://wa.link/jxes7n">Beli</a>
+        </div>
+
+        <div class="card">
+            <img src="prod6.jpeg">
+            <h3>Mahanta</h3>
+            <p>Mahanta Coffe.</p>
+            <div class="price">Rp200.000</div>
+            <a href="https://wa.link/a38cco">Beli</a>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about">
+    <div class="about-box">
+
+        <div class="about-img">
+            <img src="sri.png">
+        </div>
+
+        <div class="about-text">
+            <h2>Tentang Etawagen</h2>
+            <p>
+                Etawagen adalah produk kesehatan berbasis susu kambing premium 
+                yang membantu meningkatkan daya tahan tubuh, menjaga energi, 
+                dan mendukung gaya hidup sehat secara alami.
+            </p>
+
+            <div class="about-container">
+                <div class="about-card">
+                    <div class="about-icon">🌿</div>
+                    <h3>Bahan Alami</h3>
+                    <p>Dibuat dari bahan pilihan tanpa campuran berbahaya.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">💪</div>
+                    <h3>Menambah Energi</h3>
+                    <p>Membantu menjaga stamina dan daya tahan tubuh.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">🛡️</div>
+                    <h3>Aman Konsumsi</h3>
+                    <p>Aman dikonsumsi setiap hari untuk semua usia.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <!-- CONTACT -->
+<div class="contact reveal">
+    <h2>Hubungi Kami</h2>
+    <p>Pilih platform favorit kamu untuk terhubung dengan kami</p>
+
+    <div class="social-list">
+
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/6281234567890" target="_blank" class="social-item">
+            <svg class="social-icon" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0C5.43 0 .05 5.38.05 12c0 2.12.55 4.19 1.6 6.02L0 24l6.17-1.62A11.95 11.95 0 0 0 12.04 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.21-3.51-8.52z"/>
+            </svg>
+            WhatsApp
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a href="https://instagram.com/username" target="_blank" class="social-item">
+            <svg class="social-icon" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 5.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5z"/>
+            </svg>
+            Instagram
+        </a>
+
+        <!-- TIKTOK -->
+        <a href="https://tiktok.com/@username" target="_blank" class="social-item">
+            <svg class="social-icon" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M16.5 3a4.5 4.5 0 0 0 4.5 4.5v3a7.5 7.5 0 0 1-4.5-1.5v6.75a5.25 5.25 0 1 1-5.25-5.25c.18 0 .36.01.53.03v3.07a2.25 2.25 0 1 0 1.47 2.1V3h3.25z"/>
+            </svg>
+            TikTok
+        </a>
+
+    </div>
+</div>
+</body>
+</html>
